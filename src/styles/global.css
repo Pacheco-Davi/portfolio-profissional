@@ -1,0 +1,261 @@
+/* ===== Tokens de design =====
+   Identidade inspirada nos azulejos azul e branco da Pampulha (BH). */
+:root {
+  --azul: #1F4E9C;
+  --azul-escuro: #12305F;
+  --azul-claro: #DCE6F5;
+  --papel: #FAFAF7;
+  --texto: #1A2233;
+  --texto-suave: #4A5568;
+  --linha: #C9D3E3;
+
+  --fonte-titulo: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --fonte-texto: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+
+  --largura: 960px;
+  --raio: 10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: var(--fonte-titulo);
+  color: var(--azul-escuro);
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+h1 { font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 1.35rem; font-weight: 700; }
+
+a { color: var(--azul); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute; left: -9999px;
+}
+.skip-link:focus { left: 1rem; top: 1rem; background: #fff; padding: 0.5rem 1rem; z-index: 10; }
+
+/* ===== Layout principal: header / conteúdo / footer ===== */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+  width: 100%;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+/* ===== Header ===== */
+.header {
+  background: var(--azul);
+  color: #fff;
+  position: sticky; top: 0; z-index: 5;
+}
+.header__inner {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.header__brand {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff;
+  text-decoration: none;
+}
+.header__toggle {
+  display: none;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--raio);
+  padding: 0.35rem 0.9rem;
+  font: inherit;
+  cursor: pointer;
+}
+.nav { display: flex; gap: 0.25rem; }
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+}
+.nav__link:hover { background: rgba(255, 255, 255, 0.12); }
+.nav__link--ativo { background: #fff; color: var(--azul); font-weight: 600; }
+.nav__link--ativo:hover { background: #fff; }
+
+/* ===== Cabeçalho de página com faixa de azulejos ===== */
+.page-header { margin-bottom: 2.5rem; }
+.page-header__sub { color: var(--texto-suave); font-size: 1.15rem; margin: 0; }
+.tiles {
+  height: 48px;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  background-color: var(--azul-claro);
+  background-image:
+    radial-gradient(circle at 50% 50%, var(--azul) 0 5px, transparent 6px),
+    radial-gradient(circle at 0 0, var(--azul) 0 12px, transparent 13px),
+    radial-gradient(circle at 100% 0, var(--azul) 0 12px, transparent 13px),
+    radial-gradient(circle at 0 100%, var(--azul) 0 12px, transparent 13px),
+    radial-gradient(circle at 100% 100%, var(--azul) 0 12px, transparent 13px);
+  background-size: 48px 48px;
+}
+
+/* ===== Sobre mim ===== */
+.prose { max-width: 65ch; }
+.placeholder { color: var(--texto-suave); font-style: italic; }
+
+/* ===== Projetos: timeline ===== */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 3px solid var(--azul-claro);
+}
+.timeline__item {
+  position: relative;
+  padding: 0 0 2.5rem 1rem;
+}
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1.5rem - 9px);
+  top: 0.3rem;
+  width: 15px; height: 15px;
+  background: var(--azul);
+  border: 3px solid var(--papel);
+  border-radius: 3px;
+  transform: rotate(45deg);
+}
+.timeline__periodo { color: var(--azul); font-weight: 600; }
+.tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tags li {
+  background: var(--azul-claro);
+  color: var(--azul-escuro);
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.media-placeholder {
+  aspect-ratio: 16 / 9;
+  max-width: 560px;
+  display: grid;
+  place-items: center;
+  border: 2px dashed var(--linha);
+  border-radius: var(--raio);
+  color: var(--texto-suave);
+  margin: 1rem 0;
+}
+
+/* ===== Experiências ===== */
+.exp-list { display: grid; gap: 0; }
+.exp {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--linha);
+}
+.exp__meta { color: var(--texto-suave); font-weight: 600; }
+.exp__cargo { color: var(--azul); font-weight: 600; margin: 0 0 0.4rem; }
+.exp p { margin-top: 0; }
+
+/* ===== Contato ===== */
+.contato {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: start;
+}
+.canais { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; }
+.canais a {
+  display: flex; align-items: center; gap: 0.75rem;
+  text-decoration: none;
+  color: var(--azul-escuro);
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background: #fff;
+}
+.canais a:hover { border-color: var(--azul); }
+.canais svg { font-size: 1.4rem; color: var(--azul); }
+
+.form { display: grid; gap: 1rem; }
+.form label { display: grid; gap: 0.35rem; font-weight: 600; }
+.form input, .form textarea {
+  font: inherit;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background: #fff;
+}
+.form button {
+  justify-self: start;
+  font: inherit;
+  font-weight: 600;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  border-radius: var(--raio);
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+}
+.form button:hover { background: var(--azul-escuro); }
+
+/* ===== Footer ===== */
+.footer { background: var(--azul-escuro); color: #fff; }
+.footer__inner {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.footer p { margin: 0; font-size: 0.95rem; }
+.footer__icons { display: flex; gap: 1rem; font-size: 1.3rem; }
+.footer__icons a { color: #fff; }
+
+/* ===== Responsividade ===== */
+@media (max-width: 720px) {
+  .header__toggle { display: block; }
+  .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+  }
+  .nav--aberto { display: flex; }
+  .nav__link { border-radius: var(--raio); }
+
+  .exp { grid-template-columns: 1fr; gap: 0.25rem; }
+  .contato { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
