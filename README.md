@@ -43,7 +43,7 @@
 ## 🔗 Links Úteis
 * 🌐 **Demo Online:** _em breve (deploy na Vercel na Sprint 3)_
   > 💻 **Descrição:** Link para o site em produção, hospedado gratuitamente na Vercel.
-* 🎨 **Protótipos no Figma:** [Acessar wireframes](<LINK-DO-FIGMA>)
+* 🎨 **Protótipos no Figma:** [Acessar wireframes](<https://www.figma.com/design/e2kZdGT9Nq3rf3od288KmU/Portf%C3%B3lio-Davi-Pacheco-%E2%80%94-Vidro-el%C3%A9trico?node-id=4-11&t=mxrNoPRTkB2FNHPW-1>)
   > 📐 **Descrição:** Wireframes de média fidelidade das quatro páginas do site.
 
 ---
