@@ -10,12 +10,10 @@ export default function Footer() {
           <a href="https://github.com/Pacheco-Davi" target="_blank" rel="noreferrer" aria-label="GitHub">
             <FaGithub />
           </a>
-          {/* TODO: trocar pelo seu LinkedIn */}
-          <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/pacheco-davi/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
             <FaLinkedin />
           </a>
-          {/* TODO: trocar pelo seu e-mail */}
-          <a href="mailto:seu-email@exemplo.com" aria-label="E-mail">
+          <a href="mailto:davipn119@gmail.com" aria-label="E-mail">
             <FaEnvelope />
           </a>
         </div>

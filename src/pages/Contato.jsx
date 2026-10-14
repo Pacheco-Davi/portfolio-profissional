@@ -1,11 +1,10 @@
 import { FaEnvelope, FaWhatsapp, FaLinkedin, FaGithub } from 'react-icons/fa'
 import PageHeader from '../components/PageHeader.jsx'
 
-// TODO: trocar e-mail, número de WhatsApp e LinkedIn pelos seus.
 const canais = [
-  { label: 'E-mail', href: 'mailto:seu-email@exemplo.com', icon: <FaEnvelope /> },
-  { label: 'WhatsApp', href: 'https://wa.me/5531900000000', icon: <FaWhatsapp /> },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/SEU-USUARIO', icon: <FaLinkedin /> },
+  { label: 'E-mail', href: 'mailto:davipn119@gmail.com', icon: <FaEnvelope /> },
+  { label: 'WhatsApp', href: 'https://wa.me/5531991452714', icon: <FaWhatsapp /> },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pacheco-davi/', icon: <FaLinkedin /> },
   { label: 'GitHub', href: 'https://github.com/Pacheco-Davi', icon: <FaGithub /> },
 ]
 
